@@ -21,12 +21,15 @@ namespace ContosoPizza.Services
 
         public static Pizza Get(int id) => Pizzas.FirstOrDefault(p => p.Id == id);
 
+
+        // add pizza
         public static void Add(Pizza pizza)
         {
             pizza.Id = nextId++;
             Pizzas.Add(pizza);
         }
 
+        // delete pizza
         public static void Delete(int id)
         {
             var pizza = Get(id);
@@ -36,6 +39,7 @@ namespace ContosoPizza.Services
             Pizzas.Remove(pizza);
         }
 
+        // update pizza
         public static void Update(Pizza pizza)
         {
             var index = Pizzas.FindIndex(p => p.Id == pizza.Id);
